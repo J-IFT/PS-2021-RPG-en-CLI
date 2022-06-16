@@ -135,25 +135,30 @@ Etc ..
 
 RPG.py
 Écrire un fichier RPG.py qui permet d’utiliser la classe de personnage dans un micro-jeu-de-roleen-ligne-de-commande-pour-les-nuls.
-Demander au joueur le nom de son personnage
+Demander au joueur le nom de son personnage.
 Instancier un objet de la classe Personnage avec 120 points de vie.
+
 Demander dans un menu qui l’on veut combattre
+
 1 - un gobelin (75 pv, armé d’un gourdin (15 dg))
 2 - un orc (100 pv, armé d’une épée rouillée (20 dg))
 3 - un troll (200 pv, armé d’une hache (30 dg))
 0 – Quitter le jeu
-Attention, votre code doit être « résistant aux erreurs de saisie » et n’accepter que les choix 0 ~ 3
+
+Attention, votre code doit être « résistant aux erreurs de saisie » et n’accepter que les choix 0 ~ 3.
 Puis boucler sur un second menu qui
+
 – Affiche le statut de chacun des 2 personnages
 – Demande au joueur de choisir entre
 1 - Attaquer
 2 - Changer d'arme (Épée, 45 dg)
 0 - Abandonner
-Arrêtez quand (au moins) l'un des 2 est mort
-Affichez le vainqueur
-Retourner à l’étape 2
-Règle : Si Le joueur change d’arme l’adversaire l’attaque une fois « gratuitement »
-Règle : Abandon = défaite ; match nul = défaite2
+
+Arrêtez quand (au moins) l'un des 2 est mort.
+Affichez le vainqueur.
+Retourner à l’étape 2.
+Règle : Si Le joueur change d’arme l’adversaire l’attaque une fois « gratuitement ».
+Règle : Abandon = défaite ; match nul = défaite2.
 Attention : Votre jeu doit être « résistant à une erreur de saisie ».
 
 Étape 4 :
@@ -163,10 +168,11 @@ Je veut, par exemple, des magiciens (qui lancent des sort en utilisant du mana),
 On vas créer 2 classes qui héritent, chacune, de Personnage.
 
 - Guerrier
-Créer un fichier guerrier.py qui décrit une classe Guerrier qui hérite de Personnage et qui à une
-méthode en plus : attaquePuissante
+Créer un fichier guerrier.py qui décrit une classe Guerrier qui hérite de Personnage et qui à une méthode en plus : attaquePuissante.
 attaquePuissante fonctionne comme attaquer, mais elle inflige 1,5 fois les dégâts de l’arme.
-Méthode attaquePuissante
+
+Méthode attaquePuissante.
+
 Entrée : Cible (Personnage)
 Sortie : -rien-
 Appelle la méthode recevoirDegats du personnage reçu en paramètre (avec self.degatsArme * 1,5
@@ -174,49 +180,51 @@ en paramètre)
 Attention, attaquePuissante doit faire des dégâts entier
 
 - Magicien
-Pour les magos, c'est plus compliqué … forcément !
-Une des différence entre un magicien et un personnage : à la création, les magiciens ont 100 points
-de mana.
-2eme différence : Les magicien ont un sort de méditation qui leur redonne 40 point de mana
-(maximum 100)
-Créer un fichier magicien.py qui décrit une classe Magicien qui hérite de Personnage
+
+Pour les magos, c'est plus compliqué … forcément ! Une des différence entre un magicien et un personnage : à la création, les magiciens ont 100 points de mana.
+2eme différence : Les magicien ont un sort de méditation qui leur redonne 40 point de mana (maximum 100).
+Créer un fichier magicien.py qui décrit une classe Magicien qui hérite de Personnage.
 Méthode mediter
 Entrée : -rien-
 Sortie : -rien-
 Augmente le mana de 40 ; maximum = 100
 
 - Magicien rouge / Magicien Blanc
+
 Il y a 2 écoles de magie !
-La magie blanche (ils lancent des sorts de soin)
-La magie rouge (ils lancent des boules de feu)
+La magie blanche (ils lancent des sorts de soin).
+La magie rouge (ils lancent des boules de feu).
 Votre magicien doit donc se spécialiser !
 Et pour ça … on vas faire des héritages d'héritages !
 La classe MageBlanc va hériter de Magicien et ajouter la méthode soigner.
-Cette méthode double les points de vie (max. 100) de la cible
-et coûte 35 points de mana au lanceur.
+Cette méthode double les points de vie (max. 100) de la cible et coûte 35 points de mana au lanceur.
 Si il n'a pas assez de mana, le sort ne fait rien.
 La classe MageRouge va hériter de Magicien et ajouter la méthode boulleDeFeu.
-Ce sort fait 60 de dégâts à la cible
-et coûte 65 points de mana au lanceur.
+Ce sort fait 60 de dégâts à la cible et coûte 65 points de mana au lanceur.
 Si il n'a pas assez de mana, le sort ne fait rien.
-A faire : Implémenter les classes MageBlanc et MageRouge dans magicien.py
+A faire : Implémenter les classes MageBlanc et MageRouge dans magicien.py.
 
 Étape 5 :
 
 Modifiez le fichier RPG.py pour que le joueur choisisse, en plus de son nom, son personnage :
+
 Étape 1 bis : Vous êtes ...
+
 1 - un guerrier (100 points de vie, attaque puissante)
 2 - un mage rouge (120 pv, boule de feu)
 3 - un mage blanc (120 pv, sort de soin)
 0 – Quitter le jeu
-Modifiez aussi la « boucle de combat » pour que le jeu propose les actions spéciales de la classe du
-joueur :
+
+Modifiez aussi la « boucle de combat » pour que le jeu propose les actions spéciales de la classe du joueur :
+
 Ex (Si je joue un mage rouge)
+
 1 - Attaquer
 2- Changer d'arme (Épée, 40 dg)
 3 - Méditer (+ 40 mana)
 4 – Lancer une boule de feu
 0 - Abandonner
+
 Règle : Chaque action (Changer d’arme, méditer, lancer un sort, …) laissent le temps au monstre de vous attaquer une fois.
 Important : Votre menu doit être construit dynamiquement en fonction de la classe du joueur et ne pas afficher les actions des autres classes (pas d’attaque puissante pour les magos … )
 
