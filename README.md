@@ -12,30 +12,48 @@ Individuel
 
 Un aperçu en vidéo, c'est toujours mieux !
 
-*lien à venir*
+https://youtu.be/zE-BXBalkRg
 
 ### 📌 Consignes du projet :
 
 Étape 1 - La classe Personnage :
 
-Dans un fichier personnage.py ; Créez une classe Personnage
+Dans un fichier personnage.py : créez une classe Personnage.
+
 Un personnage à 5 attributs :
+
 • nom : Son nom, Reçu en paramètre
+
 • vie: Ses points de vie (entier), paramètre facultatif 100 par défaut
+
 • mana : Son mana (entier), paramètre facultatif 0 par défaut
+
 • nomArme : Son arme. paramètre facultatif « Épée en bois » par défaut.
+
 • dgArme : Les dégâts de son arme, un entier qui indique le nombre de points de vie enlevé à chaque coup, paramètre facultatif 10 par défaut.
+
 Les 5 attributs sont privés et ne doivent pas être manipulables de l’extérieur de la classe.
+
 La classe Personnage à également 7 méthodes qui sont grosso-modo les actions que le personnage peut effectuer :
-• getNom : Accesseur pour lire le nom du personnage
-• getVie : Accesseur pour lire les points de vie du personnage
-• getMana : Accesseur pour lire niveau de mana du personnage
-Ce sont les seuls accesseurs1, tout les autres attributs se manipulent via les méthodes dédiés
+
+• getNom : Accesseur pour lire le nom du personnage.
+
+• getVie : Accesseur pour lire les points de vie du personnage.
+
+• getMana : Accesseur pour lire niveau de mana du personnage.
+
+Ce sont les seuls accesseurs1, tout les autres attributs se manipulent via les méthodes dédiés.
+
 • recevoirDegats : le personnage prend un certain nombre de dégâts et perd de la vie.
+
 • attaquer : Inflige les dégâts de son arme à un autre personnage.
+
 • changerArme : On change le nom de l'arme et les dégâts qui vont avec.
-• estVivant : Indique si le personnage est encore vivant
-Méthode RecevoirDegats
+
+• estVivant : Indique si le personnage est encore vivant.
+
+Méthode RecevoirDegats :
+
 Entrée : degats (int)
 Sortie : -rien-
 Enlève les points de dégâts reçu en paramètre à l’attribut vie.
@@ -53,7 +71,9 @@ Entrée : -rien-
 Sortie : Booléen
 Renvoi True si vie est > zéro.
 False sinon
-Méthode __str__
+
+Méthode __str__ :
+
 La classe à aussi une méthode __str__ qui permet un affichage formaté du personnage.
 "{} ({}) | PV : {} Mana : {} Arme : {} (dg {}) | {}"
 Ou les paramètres valent les infos suivantes :
@@ -70,19 +90,31 @@ Ou les paramètres valent les infos suivantes :
 arme.py
 L’étape 1 comporte une erreur de conception : L’arme (nom & dégâts) est inclus dans la classe personnage. Ce qui implique qu’un personnage à au moins (et au plus) une arme. 
 On vas améliorer ça et « détacher » l’arme du personnage :
+
 Dans un fichier arme.py, créer un classe Arme avec comme attributs :
+
 • nom : Attribut privé reçu en paramètre.
+
 • dg : Attribut privé reçu en paramètre.
+
 et comme méthodes :
+
 • __init__
+
 • getNom
+
 • setNom
+
 • getDg
+
 • setDg
+
 La méthode __init__ sert à créer les 2 attributs privés nom & dg
 Les 2 méthodes get* servent à renvoyer les valeurs correspondantes
 Les 2 méthodes set* servent à modifier les valeurs correspondantes
-3.1.2 personnage.py
+
+personnage.py
+
 Il faut modifier personnage.py pour utiliser la nouvelle classe Arme
 Au début du fichier personnage.py ajouter une ligne :
 from arme import Arme
